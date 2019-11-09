@@ -31,7 +31,9 @@ trace_path(table, seq1, seq2, len(table) - 1, len(table[0]) - 1)
 
 number_of_paths = len(all_alignmentsB)
 
-print('Number of possible alignments is ', number_of_paths-1)
+outputFile = open('result.txt', 'w')
+
+outputFile.write('Number of possible alignments is ' + str(number_of_paths-1) + '\n')
 
 if number_of_paths-1 > config.MAX_NUMBER_PATHS:
     print('Number of possible alignments exceded the maximum number of paths specified in config.txt')
@@ -39,20 +41,7 @@ if number_of_paths-1 > config.MAX_NUMBER_PATHS:
 for i in range(1, number_of_paths):
     all_alignmentsA[i].reverse()
     all_alignmentsB[i].reverse()
-    print(''.join(map(str, all_alignmentsA[i])))
-    print(''.join(map(str, all_alignmentsB[i])))
-    print('---------------------------------')
-
-# for i in table:
-#     print(i)
-# print('seq1 =', seq1)
-# print('seq2 =', seq2)
-# print('SAME =', config.SAME)
-# print('DIFF = ', config.DIFF)
-# print('GP = ', config.GP)
-# print('MAX NUMBER PATHS =', config.MAX_NUMBER_PATHS)
-# print('MAX LEN SEQ =', config.MAX_SEQ_LENGTH)
-
-
-
-
+    outputFile.write(''.join(map(str, all_alignmentsA[i])) + '\n')
+    outputFile.write(''.join(map(str, all_alignmentsB[i])) + '\n')
+    outputFile.write('----------------------------------\n')
+outputFile.close()
