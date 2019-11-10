@@ -1,6 +1,7 @@
 # Bioinformatics first project
 
 To check how to run the program, please run the command ``` python main.py --help ```
+
 An example on the content of the file config.txt is 
 ```
 GP = -2
