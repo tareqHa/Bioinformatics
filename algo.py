@@ -1,3 +1,6 @@
+"""
+@author: Habbab
+"""
 import config
 all_alignmentsA = [[]]
 all_alignmentsB = [[]]
@@ -20,6 +23,7 @@ def S(a, b):
         return config.SAME
     else:
         return config.DIFF
+
 def Needleman_Wunsch(table, A, B):
     n = len(table)
     m = len(table[0])

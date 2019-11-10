@@ -1,5 +1,4 @@
 """
-Created on Sat Nov 9 12:35:19 2019
 @author: Habbab
 """
 import argparse
@@ -27,13 +26,15 @@ seq1 = get_sequence(sequence1File)
 seq2 = get_sequence(sequence2File)
 table = init_table(seq1, seq2)
 table = Needleman_Wunsch(table, seq1, seq2)
-trace_path(table, seq1, seq2, len(table) - 1, len(table[0]) - 1)
+n = len(table)
+m = len(table[0])
+trace_path(table, seq1, seq2, n - 1, m - 1)
 
 number_of_paths = len(all_alignmentsB)
 
 outputFile = open('result.txt', 'w')
 
-outputFile.write('Number of possible alignments is ' + str(number_of_paths-1) + '\n')
+outputFile.write('Score = ' + str(table[n-1][m-1]) + '\n' + '----------------------------------\n')
 
 if number_of_paths-1 > config.MAX_NUMBER_PATHS:
     print('Number of possible alignments exceded the maximum number of paths specified in config.txt')
