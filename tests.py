@@ -1,7 +1,7 @@
 import unittest
 from algo import *
 import config
-class TestStringMethods(unittest.TestCase):
+class TestAlgorithmMethods(unittest.TestCase):
 
     def test_init_table(self):
         # GIVEN
