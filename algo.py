@@ -7,7 +7,13 @@ all_alignmentsB = [[]]
 alignmentA = []
 alignmentB = []
 
+
+
 def init_table(seq1, seq2):
+    """
+      Initialize the table
+    """
+
     n = len(seq1) + 1
     m = len(seq2) + 1
     table =[[0 for i in range(m)] for j in range(n)]
@@ -25,6 +31,9 @@ def S(a, b):
         return config.DIFF
 
 def Needleman_Wunsch(table, A, B):
+    """
+        Implement Needleman_Wunsch algorithm
+    """
     n = len(table)
     m = len(table[0])
 
