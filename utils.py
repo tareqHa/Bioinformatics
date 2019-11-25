@@ -4,9 +4,12 @@
 import config
 import sys
 import argparse
+from Bio import SeqIO
 
 def get_sequence(file):
-    seq = open(file).read().strip(' \n')
+    
+    seq = SeqIO.read(file, "fasta")
+    
     if len(seq) > config.MAX_SEQ_LENGTH:
         sys.exit('ERROR: Please enter a sequence which has length less than or equal the the one specified in config.txt')
     else:
